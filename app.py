@@ -106,19 +106,103 @@ def get_csv_download_link(df):
 
 # Custom CSS styling
 st.markdown("""
-    <style>
-    .big-font {font-size: 40px !important; color: #1f77b4;}
-    .subheader {color: #ff7f0e;}
-    .highlight {background-color: #ffeb3b; padding: 2px 5px; border-radius: 3px;}
-    .sidebar .sidebar-content {background-color: #f0f2f6;}
-    .metric-card {
-        background: white;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin: 0.5rem 0;
-    }
-    </style>
+<style>
+/* Global font and background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f9fc;
+}
+
+/* Custom heading styles */
+.big-font {
+    font-size: 42px !important;
+    font-weight: 700;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px #ccc;
+}
+
+.subheader {
+    font-size: 22px;
+    font-weight: 600;
+    color: #34495e;
+    border-left: 5px solid #00b894;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Sidebar styling */
+section[data-testid="stSidebar"] {
+    background-color: #e3f2fd;
+    border-right: 2px solid #90caf9;
+}
+
+.sidebar .sidebar-content {
+    padding: 1rem;
+}
+
+/* Metric card styles */
+.metric-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+/* Highlighted keyword styling */
+mark {
+    background-color: #ffeb3b;
+    color: #000;
+    font-weight: bold;
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+}
+
+/* Button styles */
+button[kind="primary"] {
+    background-color: #1abc9c !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px !important;
+}
+
+button:hover {
+    background-color: #16a085 !important;
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+
+thead {
+    background-color: #3498db;
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+/* Expander customization */
+details > summary {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3436;
+    cursor: pointer;
+}
+
+details[open] > summary {
+    color: #0984e3;
+}
+</style>
 """, unsafe_allow_html=True)
 
 # Main title
