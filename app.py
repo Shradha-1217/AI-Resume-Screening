@@ -129,7 +129,7 @@ with st.sidebar:
     st.subheader("Customization Options")
     min_score = st.slider("Minimum Similarity Score", 0.0, 1.0, 0.1, 0.05)
     top_n = st.number_input("Show Top N Candidates", min_value=1, max_value=50, value=10)
-    show_skills = st.checkbox("Extract and Show Skills", value=SPACY_AVAILABLE)
+    show_skills = st.checkbox("Extract and Show Skills")
     export_format = st.selectbox("Export Format", ["CSV", "Excel", "JSON"])
     
     st.subheader("Instructions")
@@ -206,7 +206,7 @@ if uploaded_files and job_description.strip():
                 )
 
                 # Extract skills if enabled
-                if show_skills and SPACY_AVAILABLE and len(resumes) > 0:
+                if show_skills and len(resumes) > 0:
                     with st.spinner("Extracting skills..."):
                         skills_list = []
                         for i, resume in enumerate(resumes):
