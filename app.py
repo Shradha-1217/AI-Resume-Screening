@@ -110,8 +110,7 @@ def get_csv_download_link(df):
         st.error(f"Error creating CSV download: {str(e)}")
         return ""
 
-# Streamlit app configuration
-st.set_page_config(page_title="AI Resume Ranker", layout="wide", page_icon="📄")
+
 
 # Custom CSS styling
 st.markdown("""
