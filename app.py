@@ -27,8 +27,7 @@ def extract_text_from_pdf(file):
 # Function to extract skills using spaCy (if available)
 def extract_skills(text):
     """Extract relevant skills from resume text using NLP"""
-    if not SPACY_AVAILABLE:
-        return ["Skill extraction unavailable (SpaCy not installed)"]
+    
     
     try:
         doc = nlp(text.lower())
