@@ -3,13 +3,6 @@ from PyPDF2 import PdfReader
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-try:
-    import spacy
-    nlp = spacy.load("en_core_web_sm")
-    SPACY_AVAILABLE = True
-except (ModuleNotFoundError, OSError):
-    SPACY_AVAILABLE = False
-    st.warning("SpaCy not found or model not installed. Skill extraction will be disabled. Install with: 'pip install spacy' and 'python -m spacy download en_core_web_sm'")
 import re
 from io import BytesIO
 import base64
